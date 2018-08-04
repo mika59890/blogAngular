@@ -1,0 +1,19 @@
+<li  class="col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-md-8 col-sm-8 col-xs-8"
+     [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postLovelts > '0',
+                'list-group-item-danger': postLovelts < '0'}">
+  <div class="row">
+    <h2 class="col-md-4 col-sm-4 col-xs-3"> {{ postTitle }}  </h2>
+    <span class="col-md-offset-6 col-sm-offset-6 col-xs-offset-6" > {{postCreated_date | date:'dd/MM/yyy H:mm:ss'}} </span>
+  </div>
+  <p style="justify-content: space-between"> {{ postContent }} </p>
+  <button class="btn btn-success" (click)="onLove()" (click)="calculLovelts()">
+    Love it !!!!
+    <span class="badge badge-primary badge-pill">{{ postLove }}</span>
+  </button>
+  <button class="btn btn-danger" (click)="onDontLove()" (click)="calculLovelts()">
+    Don't love it
+    <span class="badge badge-primary badge-pill">{{ postDontLove }}</span>
+  </button>
+</li>
+
